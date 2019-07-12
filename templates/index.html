@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Madlibs</h1>
+<form action='/story'>
+  {% for prompt in madlib_prompts %}
+    <p>
+      {{ prompt }}: <input type="text" name="{{ loop.index0 }}{{ prompt }}">
+    </p>
+  {% endfor %}
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
